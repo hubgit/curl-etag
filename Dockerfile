@@ -9,8 +9,4 @@ LABEL "repository"="http://github.com/hubgit/curl-etag"
 LABEL "homepage"="http://github.com/hubgit/curl-etag"
 LABEL "maintainer"="Alf Eaton <eaton.alf@gmail.com>"
 
-COPY entrypoint.sh /entrypoint.sh
-
-ENTRYPOINT ["/entrypoint.sh"]
-
-CMD ["--help"]
+COPY curl-etag /usr/local/bin/curl-etag
