@@ -1,5 +1,3 @@
-#!/usr/bin/env bash
-
 URL=$1
 FILE=$2
 
