@@ -11,7 +11,7 @@ jobs:
   curl:
     runs-on: ubuntu-latest
     steps:
-    - uses: hubgit/curl@master
+    - uses: hubgit/curl-etag@master
       with:
         args: curl-etag file.json https://example.com/file.json
 ```
