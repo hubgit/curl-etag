@@ -1,16 +1,10 @@
-# GitHub Action for curl
+# GitHub Action for cURL with ETag support
 
-Wraps the curl CLI to be used in GitHub Actions. See also [GitHub Action for wget](https://github.com/marketplace/actions/github-action-for-wget).
-
-
-## Features
- * make http requests
- * http errors are treated as errors
-
+ * Fetch files using cURL with ETag support
+ * HTTP errors are treated as errors
 
 ## Usage
 
-### GitHub Actions
 ```
 on: push
 jobs:
@@ -18,46 +12,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - name: curl
-      uses: wei/curl@master
+      uses: hubgit/curl@master
       with:
-        args: https://httpbin.org/get
+        args: curl-etag file.json https://example.com/file.json
 ```
-
-```
-on: push
-jobs:
-  curl:
-    runs-on: ubuntu-latest
-    steps:
-    - name: curl
-      uses: wei/curl@v1
-      with:
-        args: -X POST https://httpbin.org/post
-```
-
-```
-on: push
-jobs:
-  curl:
-    runs-on: ubuntu-latest
-    steps:
-    - uses: actions/checkout@master
-    - name: curl
-      uses: wei/curl@v1
-      with:
-        args: --upload-file .github/workflows/main.yml https://transfer.sh/main-workflow.yml
-```
-
-### Docker
-```
-docker run --rm $(docker build -q .) \
-  https://httpbin.org/get
-```
-
-
-## Author
-[Wei He](https://github.com/wei) _github@weispot.com_
-
-
-## License
-[MIT](https://wei.mit-license.org)
