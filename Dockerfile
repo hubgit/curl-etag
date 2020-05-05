@@ -12,3 +12,7 @@ LABEL "maintainer"="Alf Eaton <eaton.alf@gmail.com>"
 USER root
 
 COPY curl-etag /usr/local/bin/curl-etag
+
+ENTRYPOINT ["/usr/local/bin/curl-etag"]
+
+CMD ["--help"]
